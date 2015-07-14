@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+ruby "1.9.3"
+gem "rspec", "~>2.99.0"
+gem "rspec-core", "~>2.99.0"
+gem "rspec-expectations", "~>2.99.0"
+gem "rspec-mocks", "~>2.99.0"
+gem "pry"
