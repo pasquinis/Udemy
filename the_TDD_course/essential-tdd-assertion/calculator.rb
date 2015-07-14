@@ -6,4 +6,9 @@ end
 
 calc = Calculator.new
 result = calc.sum(1,1)
-puts result
+
+if result == 2
+  puts "\033[32m Sum Passed \033[0m"
+else
+  puts "\e[31m Sum Failed \e[0m"
+end
