@@ -6,16 +6,19 @@ class Calculator
   def subtract(x, y)
     x - y
   end
+
+
+  def verify(expected, actual, message)
+    if actual == expected
+      puts "\033[32m #{message} Passed \033[0m"
+    else
+      puts "\e[31m #{message} Failed \e[0m"
+    end
+  end
 end
 
 calc = Calculator.new
-result = calc.sum(1,1)
-
-if result == 2
-  puts "\033[32m Sum Passed \033[0m"
-else
-  puts "\e[31m Sum Failed \e[0m"
-end
+calc.verify(2, calc.sum(1,1), 'Sum')
 
 result =  calc.subtract(2,1)
 if result == 1
