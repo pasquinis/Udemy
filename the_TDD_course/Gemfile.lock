@@ -27,3 +27,6 @@ DEPENDENCIES
   rspec-core (~> 2.99.0)
   rspec-expectations (~> 2.99.0)
   rspec-mocks (~> 2.99.0)
+
+BUNDLED WITH
+   1.10.5
