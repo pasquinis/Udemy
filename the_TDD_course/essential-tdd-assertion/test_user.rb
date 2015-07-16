@@ -2,12 +2,21 @@ require 'minitest/autorun'
 
 class User
 
+  def initialize
+    @roles = []
+  end
+
   def assign_role(role)
-     @role = role
+     @roles.push(role)
   end
 
   def in_role?(role)
-    @role == role
+    @roles.each do |assigned_role|
+        if assigned_role == role
+          return true
+        end
+    end
+    return false
   end
 end
 
@@ -27,5 +36,15 @@ class TestUser < Minitest::Test
     user.assign_role('user')
 
     assert !user.in_role?('admin'), 'user is in admin role'
+  end
+
+  def test_user_can_be_in_two_role
+    user = User.new
+
+    user.assign_role('admin')
+    user.assign_role('user')
+
+    assert user.in_role?('admin'), 'user is not in admin role'
+    assert user.in_role?('user'), 'user is not in user role'
   end
 end
