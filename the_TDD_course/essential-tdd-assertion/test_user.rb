@@ -47,4 +47,19 @@ class TestUser < Minitest::Test
     assert user.in_role?('admin'), 'user is not in admin role'
     assert user.in_role?('user'), 'user is not in user role'
   end
+
+
+  def test_user_can_be_in_multiple_role
+    user = User.new
+
+    user.assign_role('admin')
+    user.assign_role('user')
+    user.assign_role('professor')
+    user.assign_role('student')
+
+    assert user.in_role?('admin'), 'user is not in admin role'
+    assert user.in_role?('user'), 'user is not in user role'
+    assert user.in_role?('professor'), 'user is not in professor role'
+    assert user.in_role?('student'), 'user is not in student role'
+  end
 end
