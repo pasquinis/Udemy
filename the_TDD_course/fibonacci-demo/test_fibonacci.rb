@@ -17,4 +17,9 @@ class TestFibonacci < Minitest::Test
     result = Fibonacci.of(2)
     assert_equal 1, result
   end
+
+  def test_fibonacci_of_three_is_two
+    result = Fibonacci.of(3)
+    assert_equal 2, result
+  end
 end
