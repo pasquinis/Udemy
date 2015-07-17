@@ -1,5 +1,5 @@
 class Fibonacci
-  def self.of(position)
-    0
+  def self.of(value)
+    value
   end
 end
