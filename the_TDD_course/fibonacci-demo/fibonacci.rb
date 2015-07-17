@@ -1,7 +1,7 @@
 class Fibonacci
   def self.of(value)
     if value == 0
-      1
+      0
     elsif value == 1
       1
     else
