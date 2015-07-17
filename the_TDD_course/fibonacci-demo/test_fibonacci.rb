@@ -12,4 +12,9 @@ class TestFibonacci < Minitest::Test
     result = Fibonacci.of(1)
     assert_equal 1, result
   end
+
+  def test_fibonacci_of_two_is_one
+    result = Fibonacci.of(2)
+    assert_equal 1, result
+  end
 end
