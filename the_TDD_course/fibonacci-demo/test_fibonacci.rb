@@ -7,4 +7,9 @@ class TestFibonacci < Minitest::Test
     result = Fibonacci.of(0)
     assert_equal 0, result
   end
+
+  def test_fibonacci_of_one_is_one
+    result = Fibonacci.of(1)
+    assert_equal 1, result
+  end
 end
