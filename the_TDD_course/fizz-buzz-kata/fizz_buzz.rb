@@ -9,13 +9,19 @@ class FizzBuzz
 
     def generate
         numbers.collect do |number|
-            if (number % 3 == 0)
+            if multiple_of?(number, 3) and multiple_of?(number, 5)
+                'FizzBuzz'
+            elsif multiple_of?(number, 3)
                 'Fizz'
-            elsif (number % 5 == 0)
+            elsif multiple_of?(number, 5)
                 'Buzz'
             else
                 number
             end
         end
+    end
+
+    def multiple_of?(x, y)
+        (x % y == 0)
     end
 end

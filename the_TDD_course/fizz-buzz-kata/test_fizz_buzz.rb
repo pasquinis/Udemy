@@ -25,4 +25,13 @@ class TestFizzBuzz < Minitest::Test
 
         assert_equal('Buzz', result[4])
     end
+
+    def test_generate_buzz_for_multiple_of_15
+        obj = FizzBuzz.new(15)
+
+        result = obj.generate
+
+        assert_equal('FizzBuzz', result[14])
+    end
+
 end
