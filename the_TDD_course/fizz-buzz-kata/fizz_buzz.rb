@@ -1,3 +1,5 @@
+require_relative 'fizz_buzz_engine'
+
 class FizzBuzz
     def initialize(max_value)
         @max_value = max_value
@@ -9,15 +11,8 @@ class FizzBuzz
 
     def generate
         numbers.collect do |number|
-            if multiple_of?(number, 3) and multiple_of?(number, 5)
-                'FizzBuzz'
-            elsif multiple_of?(number, 3)
-                'Fizz'
-            elsif multiple_of?(number, 5)
-                'Buzz'
-            else
-                number
-            end
+         eng = FizzBuzzEngine.new(number)
+         eng.value
         end
     end
 
