@@ -1,13 +1,18 @@
 class Stack
 
+    def initialize
+        @items = []
+    end
+
     def push(item)
+        @items << item
     end
 
     def size
-        1
+        @items.size
     end
 
     def pop
-        2
+        @items.pop
     end
 end
