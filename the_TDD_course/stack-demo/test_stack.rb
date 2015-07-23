@@ -3,6 +3,12 @@ require_relative 'stack'
 
 class TestStack < Minitest::Test
 
+  def test_should_be_empty_when_initialize
+    stack = Stack.new
+
+    assert stack.empty?
+  end
+
   def test_should_push_a_given_object
     stack = Stack.new
 

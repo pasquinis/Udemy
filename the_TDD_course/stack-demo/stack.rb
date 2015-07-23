@@ -19,4 +19,8 @@ class Stack
     def pop
         @items.pop
     end
+
+    def empty?
+        @items.size == 0
+    end
 end
