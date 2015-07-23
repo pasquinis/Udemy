@@ -11,4 +11,12 @@ class TestStack < Minitest::Test
     assert_equal 1, stack.size
   end
 
+  def test_should_pop_an_element
+    stack = Stack.new
+    stack.push(2)
+
+    element = stack.pop
+
+    assert_equal 2, element
+  end
 end

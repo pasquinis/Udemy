@@ -6,4 +6,8 @@ class Stack
     def size
         1
     end
+
+    def pop
+        2
+    end
 end
