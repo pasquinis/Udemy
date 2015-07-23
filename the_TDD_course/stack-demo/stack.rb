@@ -12,6 +12,10 @@ class Stack
         @items.size
     end
 
+    def top
+        @items.last
+    end
+
     def pop
         @items.pop
     end
