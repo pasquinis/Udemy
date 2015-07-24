@@ -17,6 +17,7 @@ class Stack
     end
 
     def pop
+        raise Exception.new('Can not pop from an empty stack') if @items.empty?
         @items.pop
     end
 
