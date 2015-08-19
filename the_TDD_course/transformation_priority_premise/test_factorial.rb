@@ -5,7 +5,7 @@ class Factorial
     if value < 2
       1
     else
-      value
+      value * calculate(value-1)
     end
   end
 end
@@ -27,4 +27,8 @@ class TestFactorial < Minitest::Test
     assert_equal 2, two
   end
 
+  def test_factorial_three_is_six
+    six = Factorial.calculate(3)
+    assert_equal 6, six
+  end
 end
