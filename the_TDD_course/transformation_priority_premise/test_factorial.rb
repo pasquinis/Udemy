@@ -2,11 +2,9 @@ require 'minitest/autorun'
 
 class Factorial
   def self.calculate(value)
-    if value < 2
-      1
-    else
-      value * calculate(value-1)
-    end
+    result = 1
+    2.upto(value) { |x| result *= x }
+    result
   end
 end
 
