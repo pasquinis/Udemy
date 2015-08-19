@@ -2,7 +2,11 @@ require 'minitest/autorun'
 
 class Factorial
   def self.calculate(value)
-    1
+    if value < 2
+      1
+    else
+      value
+    end
   end
 end
 
@@ -17,4 +21,10 @@ class TestFactorial < Minitest::Test
     one = Factorial.calculate(1)
     assert_equal 1, one
   end
+
+  def test_factorial_two_is_two
+    two = Factorial.calculate(2)
+    assert_equal 2, two
+  end
+
 end
