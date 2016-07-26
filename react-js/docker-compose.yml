@@ -1,0 +1,5 @@
+version: '2'
+services:
+  nodejs:
+    build: .
+    image: nodejs:latest
