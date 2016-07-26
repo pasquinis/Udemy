@@ -2,4 +2,4 @@ version: '2'
 services:
   nodejs:
     build: .
-    image: nodejs:latest
+    image: pasquinis/nodejs:latest
