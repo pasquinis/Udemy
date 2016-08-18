@@ -18,6 +18,14 @@ sudo docker-compose $COMPOSE_ARGS up -d
 sudo docker-compose $COMPOSE_ARGS run --no-deps --rm -e ENV=UNIT identidock
 ERR=$?
 
+if [ $ERR -eq 0 ];then
+    echo "Test passed - Tagging"
+    HASH=$(git rev-parse --short HEAD)
+    sudo docker tag -f jenkins_identidock pasquinis/identidock:$HASH
+    sudo docker tag -f jenkins_identidock pasquinis/identidock:newest
+    echo "Pushing"
+fi
+
 #Stop and remove latest containers
 sudo docker-compose $COMPOSE_ARGS stop
 sudo docker-compose $COMPOSE_ARGS rm --force -v
