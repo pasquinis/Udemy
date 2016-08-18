@@ -21,9 +21,12 @@ ERR=$?
 if [ $ERR -eq 0 ];then
     echo "Test passed - Tagging"
     HASH=$(git rev-parse --short HEAD)
-    sudo docker tag -f jenkins_identidock pasquinis/identidock:$HASH
-    sudo docker tag -f jenkins_identidock pasquinis/identidock:newest
+    sudo docker tag jenkins_identidock pasquinis/identidock:$HASH
+    sudo docker tag jenkins_identidock pasquinis/identidock:newest
     echo "Pushing"
+    sudo docker login -u $USERNAME -p $PASSWORD
+    sudo docker push pasquinis/identidock:$HASH
+    sudo docker push pasquinis/identidock:newest
 fi
 
 #Stop and remove latest containers
