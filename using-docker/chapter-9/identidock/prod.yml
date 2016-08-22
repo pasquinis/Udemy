@@ -1,7 +1,7 @@
 version: '2'
 services:
   proxy:
-    image: identiproxy:0.1
+    image: identiproxy:0.2
     links:
       - identidock
     ports:
