@@ -34,5 +34,5 @@
    $ docker run -d --link dnmonster:dnmonster \
      --link redis-ambassador:redis \
      -p 80:9090 \
-     pasquinis:identidock
+     pasquinis/identidock:newest
 ```
