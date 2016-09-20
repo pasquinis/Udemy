@@ -1,6 +1,6 @@
 # Swarm
 
-## Cluster
+## Create Cluster
 
 I use _docker-machine_ to create a small cluster of VMs, One manager and two swarm agent.
 
@@ -36,4 +36,16 @@ I use _docker-machine_ to create a small cluster of VMs, One manager and two swa
     --swarm \
     --swarm-discovery token://$SWARM_TOKEN \
     swarm-2
+```
+
+## Test our cluster
+
+1. Add container to _datacenter A_
+   * Connect our docker cliet to _swarm-master_
+```
+   $ eval $(docker-machine env --swarm swarm-master)
+```
+   * Run the container
+```
+   $ docker run -d debian sleep 10
 ```
