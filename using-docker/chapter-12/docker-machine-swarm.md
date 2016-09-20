@@ -29,6 +29,7 @@ I use _docker-machine_ to create a small cluster of VMs, One manager and two swa
 ```
 
 3. The **datacenter B**
+   * Create a _swarm agent_
 ```
    $ docker-machine create -d virtualbox \
     --engine-label dc=b \
