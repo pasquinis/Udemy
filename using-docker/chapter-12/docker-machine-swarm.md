@@ -45,7 +45,18 @@ I use _docker-machine_ to create a small cluster of VMs, One manager and two swa
 ```
    $ eval $(docker-machine env --swarm swarm-master)
 ```
-   * Run the container
+   * Run the container into cluster
 ```
    $ docker run -d debian sleep 10
+   $ docker run -d -p 80:80 nginx
+   $ docker run -d -p 80:80 nginx
+   $ docker run -d -p 80:80 nginx
+```
+   * See the container disposition
+```
+   $ docker ps
+```
+   * Run the container using _constraint_ filter
+```
+   docker run -d -e constraint:dc==b postgres
 ```
