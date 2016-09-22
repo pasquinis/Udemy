@@ -58,5 +58,14 @@ I use _docker-machine_ to create a small cluster of VMs, One manager and two swa
 ```
    * Run the container using _constraint_ filter
 ```
-   docker run -d -e constraint:dc==b postgres
+   $ docker run -d -e constraint:dc==b postgres
+```
+2. Stop and Remove VMs
+```
+  $ docker-machine stop swarm-master
+  $ docker-machine rm swarm-master
+  $ docker-machine stop swarm-1
+  $ docker-machine rm swarm-1
+  $ docker-machine stop swarm-2
+  $ docker-machine rm swarm-2
 ```
